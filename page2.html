@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page2.css">
+    <title>Library Tracker Registration</title>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="registration-form">
+            <div class="logo">
+                <img src="C:\Users\singl\OneDrive\Desktop\WhatsApp Image 2024-10-22 at 20.37.18_37bf1b9a.jpg" alt="Library Tracker Logo">
+            </div>
+            <h2>Registration</h2>
+            <p>For Both Staff & Students</p>
+
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="regNo">Reg No.</label>
+                    <input type="text" id="regNo" placeholder="College Reg. No." required>
+                </div>
+                <div class="form-group">
+                    <label for="email">College Email ID</label>
+                    <input type="email" id="email" placeholder="username@collegename.ac.in" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <div class="footer">
+                <p>Already a User? <a href="page1.html">Login now</a></p>
+                <p><a href="page3.html">Use as Guest</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if the passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+            } else {
+                // Show registration complete message
+                alert("Registration Complete!");
+
+                // Redirect to the next page after a short delay (e.g., 2 seconds)
+                setTimeout(function() {
+                    window.location.href = "page3.html"; // Change to the actual URL of the next page
+                }, 2000); // 2 second delay before redirect
+            }
+        });
+    </script>
+</body>
+</html>
